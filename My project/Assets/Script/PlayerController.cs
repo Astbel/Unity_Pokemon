@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         jump();
         Flip();
         CheckGround();
+        SwitchAnimation();
     }
 
     /// <summary>
@@ -81,6 +82,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
+                myAnim.SetBool("Jump",true);
                 Vector2 jumpVal = new Vector2(0.0f, jumpforce);
                 rb.velocity = Vector2.up * jumpVal;
             }
@@ -90,11 +92,26 @@ public class PlayerController : MonoBehaviour
     void CheckGround()
     {
         isGround = myfeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
-        Debug.Log(isGround);
     }
 
-
-
+    /*Switch Anim*/
+    void SwitchAnimation()
+    {
+        myAnim.SetBool("Idel",false);
+        if (myAnim.GetBool("Jump"))
+        {
+            if (rb.velocity.y <0.0f)
+            {
+                myAnim.SetBool("Jump",false);
+                myAnim.SetBool("Fall",true);
+            }
+        }
+        else if (isGround)
+        {
+            myAnim.SetBool("Fall",false);
+            myAnim.SetBool("Idel",true);
+        }
+    }
 
 
 
