@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
 
     private BoxCollider2D myfeet;
     //Variable
-    public float speed, jumpforce;
+    public float speed, jumpforce, DoubleJumpForce;
 
-    private bool isGround;
+    private bool isGround, CanDoubleJump;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,15 +78,26 @@ public class PlayerController : MonoBehaviour
     /*Jumping method check is player at ground*/
     void jump()
     {
-        if (isGround)
+        if (Input.GetButtonDown("Jump"))
         {
-            if (Input.GetButtonDown("Jump"))
+            if (isGround)
             {
-                myAnim.SetBool("Jump",true);
+                myAnim.SetBool("Jump", true);
                 Vector2 jumpVal = new Vector2(0.0f, jumpforce);
                 rb.velocity = Vector2.up * jumpVal;
+                CanDoubleJump = true;
+            }
+            else
+            {
+                if (CanDoubleJump)
+                {
+                    Vector2 DoubleJumpVal = new Vector2(0.0f, DoubleJumpForce);
+                    rb.velocity = Vector2.up * DoubleJumpVal;
+                    CanDoubleJump = false;
+                }
             }
         }
+
     }
     /*check ground is touch*/
     void CheckGround()
@@ -97,19 +108,19 @@ public class PlayerController : MonoBehaviour
     /*Switch Anim*/
     void SwitchAnimation()
     {
-        myAnim.SetBool("Idel",false);
+        myAnim.SetBool("Idel", false);
         if (myAnim.GetBool("Jump"))
         {
-            if (rb.velocity.y <0.0f)
+            if (rb.velocity.y < 0.0f)
             {
-                myAnim.SetBool("Jump",false);
-                myAnim.SetBool("Fall",true);
+                myAnim.SetBool("Jump", false);
+                myAnim.SetBool("Fall", true);
             }
         }
         else if (isGround)
         {
-            myAnim.SetBool("Fall",false);
-            myAnim.SetBool("Idel",true);
+            myAnim.SetBool("Fall", false);
+            myAnim.SetBool("Idel", true);
         }
     }
 
