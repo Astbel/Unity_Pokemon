@@ -7,7 +7,7 @@ public class Enemy_Bat : Enemy
     // Start is called before the first frame update
     public new void Start()
     {
-        
+        base.Start();
     }
 
     // Update is called once per frame
@@ -15,6 +15,8 @@ public class Enemy_Bat : Enemy
     {
         base.Update();
     }
+
+
 
 
 }

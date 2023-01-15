@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         coli2D = GetComponent<PolygonCollider2D>();
+        coli2D.enabled = false;
     }
 
     // Update is called once per frame

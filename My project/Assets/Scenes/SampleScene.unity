@@ -549,6 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damge: 1
   LifePoint: 10
+  flashtime: 0.3
 --- !u!61 &1614438207
 BoxCollider2D:
   m_ObjectHideFlags: 0
