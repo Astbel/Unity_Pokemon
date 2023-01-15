@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // movement();
+        //  Attack();
         jump();
         Flip();
         CheckGround();
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         movement();
+       
     }
 
     //method
@@ -124,7 +126,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
+    /*Attack  method*/
+    void Attack()
+    {
+        if (Input.GetButtonDown("Attack"))
+        {
+            myAnim.SetTrigger("Attack");
+        }
+    }
 
 }
