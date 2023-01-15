@@ -8,6 +8,8 @@ public abstract class Enemy : MonoBehaviour
     private Color orginal_Color;
     public int damge, LifePoint;
 
+    public GameObject BloodEffect;
+
     public float flashtime;
     // Start is called before the first frame update
     public void Start()
@@ -30,6 +32,7 @@ public abstract class Enemy : MonoBehaviour
     {
         LifePoint -= damge;
         FlashColor(flashtime);
+        Instantiate(BloodEffect,transform.position,Quaternion.identity);
     }
 
 
@@ -45,5 +48,5 @@ public abstract class Enemy : MonoBehaviour
         sr.color = orginal_Color;
     }
 
-    
+
 }
