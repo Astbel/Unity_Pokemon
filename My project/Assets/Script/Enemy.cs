@@ -33,6 +33,7 @@ public abstract class Enemy : MonoBehaviour
         LifePoint -= damge;
         FlashColor(flashtime);
         Instantiate(BloodEffect,transform.position,Quaternion.identity);
+        GameController.camShake.Shake();
     }
 
 

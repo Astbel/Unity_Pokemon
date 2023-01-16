@@ -6,10 +6,11 @@ public class Camera_Follow : MonoBehaviour
 {
     public Transform target;
     public float smoothing;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameController.camShake =GameObject.FindGameObjectWithTag("CameraShake").GetComponent<Camera_Shake>();
     }
     /// <summary>
     /// LateUpdate is called every frame, if the Behaviour is enabled.
