@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22cc8e599ec7d994984321c54aa0d5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damge: 1
+  damge: 2
   LifePoint: 10
   BloodEffect: {fileID: 729354202779188239, guid: 7e240aa4801a3604d9fc24d5832a9cd2, type: 3}
   flashtime: 0.3

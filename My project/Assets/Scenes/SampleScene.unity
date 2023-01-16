@@ -233,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332650828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.80661, y: -4.3575015, z: 0.05145468}
+  m_LocalPosition: {x: 6.93, y: 0.72, z: 0.05145468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -485,6 +485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 178137397}
   smoothing: 0.1
+  minPosition: {x: 0, y: 0}
+  maxPosition: {x: 0, y: 0}
 --- !u!95 &519420034
 Animator:
   serializedVersion: 5
@@ -717,11 +719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493156972217534231, guid: 5c857adf05ffe7e4e99c9d48ef3a77ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.56
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 1493156972217534231, guid: 5c857adf05ffe7e4e99c9d48ef3a77ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.82
+      value: 8.79
       objectReference: {fileID: 0}
     - target: {fileID: 1493156972217534231, guid: 5c857adf05ffe7e4e99c9d48ef3a77ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -769,14 +771,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 694652073640021935, guid: faffcf78baf93c3458cec17d290dc7c2, type: 3}
-      propertyPath: jumpforce
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 694652073640021935, guid: faffcf78baf93c3458cec17d290dc7c2, type: 3}
-      propertyPath: DoubleJumpForce
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 694652073640021936, guid: faffcf78baf93c3458cec17d290dc7c2, type: 3}
       propertyPath: m_RootOrder
       value: 2
