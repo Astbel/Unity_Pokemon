@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public Animator anim;
     public int LifePoint;
     public int blinks;
     public float time;
+
+    public int dieTime;
     private Renderer myRender;
 
     // Start is called before the first frame update
     void Start()
     {
         myRender = GetComponent<Renderer>();
+        anim =GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,11 +30,16 @@ public class PlayerHealth : MonoBehaviour
         LifePoint -= Damage;
         if (LifePoint <= 0)
         {
-            Destroy(gameObject);
+            anim.SetTrigger("Die");
+            Invoke("KillPlayer",dieTime);
         }
         BlinkPlayer(blinks,time);
     }
 
+    void KillPlayer()
+    {
+        Destroy(gameObject);
+    }
     void BlinkPlayer(int numBlink, float second)
     {
         StartCoroutine(DoBlinks(numBlink,second));

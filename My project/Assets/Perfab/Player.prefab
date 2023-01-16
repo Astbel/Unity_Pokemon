@@ -157,8 +157,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1117137105
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2273262987894464175, guid: 02a00cf93755d574ea8b044c5da8948c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -237,7 +237,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 694652073640021941}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 819f959a566cf09458bb1367c0b1e6a3, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -282,6 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3cb4a02e9fe10498b65d5e69c2434c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   LifePoint: 10
   blinks: 2
   time: 0.1
+  dieTime: 2
