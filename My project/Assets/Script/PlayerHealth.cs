@@ -8,15 +8,19 @@ public class PlayerHealth : MonoBehaviour
     public int LifePoint;
     public int blinks;
     public float time;
-
     public int dieTime;
     private Renderer myRender;
-
+    private ScreenFlash sf;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        HealthBar.LifeFull = LifePoint;
+        HealthBar.LifePoint = LifePoint;
         myRender = GetComponent<Renderer>();
-        anim =GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        sf =GetComponent<ScreenFlash>();
+        rb =GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -27,13 +31,21 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int Damage)
     {
+        sf.FlashScreen();
         LifePoint -= Damage;
+        if (LifePoint < 0)
+        {
+            LifePoint = 0;
+        }
+        HealthBar.LifePoint = LifePoint;
         if (LifePoint <= 0)
         {
+            rb.velocity = new Vector2(0,0);
+            GameController.isGameAlive =false;
             anim.SetTrigger("Die");
-            Invoke("KillPlayer",dieTime);
+            Invoke("KillPlayer", dieTime);
         }
-        BlinkPlayer(blinks,time);
+        BlinkPlayer(blinks, time);
     }
 
     void KillPlayer()
@@ -42,14 +54,14 @@ public class PlayerHealth : MonoBehaviour
     }
     void BlinkPlayer(int numBlink, float second)
     {
-        StartCoroutine(DoBlinks(numBlink,second));
+        StartCoroutine(DoBlinks(numBlink, second));
     }
 
     IEnumerator DoBlinks(int numBlink, float second)
     {
-        for (int i = 0; i < numBlink*2; i++)
+        for (int i = 0; i < numBlink * 2; i++)
         {
-            myRender.enabled =!myRender.enabled;
+            myRender.enabled = !myRender.enabled;
             yield return new WaitForSeconds(second);
         }
         myRender.enabled = true;

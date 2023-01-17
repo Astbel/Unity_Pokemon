@@ -27,10 +27,14 @@ public class PlayerController : MonoBehaviour
     {
         // movement();
         //  Attack();
-        jump();
-        Flip();
-        CheckGround();
-        SwitchAnimation();
+        if (GameController.isGameAlive)
+        {
+            jump();
+            Flip();
+            CheckGround();
+            SwitchAnimation();
+        }
+
     }
 
     /// <summary>
@@ -38,8 +42,10 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        movement();
-       
+        if (GameController.isGameAlive)
+        {
+             movement();
+        }
     }
 
     //method
