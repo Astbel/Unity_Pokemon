@@ -49,6 +49,9 @@ TagManager:
   - name: Ground
     uniqueID: 3563369087
     locked: 0
+  - name: Spike
+    uniqueID: 2476647425
+    locked: 0
   - name: Enemy
     uniqueID: 3483831139
     locked: 0

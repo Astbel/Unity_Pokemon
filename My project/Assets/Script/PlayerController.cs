@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D coil;
     private Animator myAnim;
-
     private BoxCollider2D myfeet;
     //Variable
     public float speed, jumpforce, DoubleJumpForce;
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameController.isGameAlive)
         {
-             movement();
+            movement();
         }
     }
 
