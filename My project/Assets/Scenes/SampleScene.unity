@@ -20309,10 +20309,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 409018775, guid: faffcf78baf93c3458cec17d290dc7c2, type: 3}
-      propertyPath: hit_player_cd_time
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1068404384, guid: faffcf78baf93c3458cec17d290dc7c2, type: 3}
       propertyPath: image
       value: 
